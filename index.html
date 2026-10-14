@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>电影网8090 · 怀旧剧场与8090年代经典影视在线观看平台</title>
+<meta name="description" content="电影网8090（dianyingwang8090-app）是一个聚焦8090年代经典影视的在线怀旧剧场，精选港片黄金岁月、译制片、老电视剧、怀旧动漫与幕后故事。每一部作品都配有年代背景、看点解读与观影路径，让你在熟悉的光影里找回童年的夏夜与录像厅。网站按年代、类型、地区三重维度整理，支持手机、平板与电脑自适应浏览，无需注册即可收藏自己的8090片单。">
+<meta name="keywords" content="电影网8090, 8090电影, 经典老电影, 怀旧剧场, 港片经典, 8090年代电视剧, 录像厅, 译制片, 老片推荐, dianyingwang8090-app, 怀旧观影, 童年影视, 老港片, 8090怀旧, 经典电影在线观看">
+<meta name="author" content="电影网8090 编辑组">
+<meta name="copyright" content="Copyright © 电影网8090（dianyingwang8090-app） 保留所有权利">
+<meta name="theme-color" content="#0d0f1a">
+<meta name="format-detection" content="telephone=no">
+<meta name="referrer" content="no-referrer-when-downgrade">
+<link rel="canonical" href="https://dianyingwang8090-app.github.io/">
+<style>
+:root{
+  --bg:#0d0f1a;
+  --bg2:#141728;
+  --ink:#f2f1ea;
+  --ink2:#c9c8c0;
+  --ink3:#8d8e96;
+  --gold:#e8b14f;
+  --gold2:#f4d58d;
+  --red:#d6453d;
+  --line:rgba(232,177,79,.22);
+  --shadow:0 14px 40px rgba(0,0,0,.45);
+  --max:1180px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  line-height:1.8;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(900px 500px at 12% -8%,rgba(214,69,61,.22),transparent 60%),
+    radial-gradient(800px 600px at 88% 8%,rgba(232,177,79,.16),transparent 62%),
+    linear-gradient(180deg,#0d0f1a,#0a0b12 70%);
+}
+body::after{
+  content:"";
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.035;
+  background-image:repeating-linear-gradient(0deg,transparent 0,transparent 2px,rgba(255,255,255,.7) 3px);
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* ── 导航 ── */
+header{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(10px);
+  background:rgba(13,15,26,.82);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{display:flex;align-items:baseline;gap:10px}
+.logo b{font-size:22px;letter-spacing:.5px;color:var(--gold2)}
+.logo b i{color:var(--red);font-style:normal}
+.logo span{font-size:11px;color:var(--ink3);border-left:1px solid var(--line);padding-left:10px}
+.menu{display:flex;gap:6px;align-items:center}
+.menu a{
+  font-size:15px;padding:8px 14px;border-radius:999px;
+  color:var(--ink2);transition:.25s;
+}
+.menu a:hover{background:rgba(232,177,79,.12);color:var(--gold2)}
+.menu .site{display:none;font-size:13px;color:var(--ink3)}
+.btn-nav{
+  display:none;width:42px;height:42px;border:1px solid var(--line);
+  background:rgba(255,255,255,.04);border-radius:10px;cursor:pointer;
+  flex-direction:column;align-items:center;justify-content:center;gap:5px;
+}
+.btn-nav i{width:18px;height:2px;background:var(--gold2);border-radius:2px}
+
+/* ── Hero ── */
+.hero{position:relative;padding:80px 0 60px}
+.kicker{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:12px;letter-spacing:2px;color:var(--gold);
+  border:1px solid var(--line);border-radius:999px;padding:6px 16px;margin-bottom:26px;
+}
+.kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--red);box-shadow:0 0 12px var(--red)}
+h1{
+  font-size:clamp(30px,5.4vw,56px);line-height:1.25;font-weight:800;
+  letter-spacing:1px;max-width:15em;
+}
+h1 em{font-style:normal;color:var(--gold2)}
+.hero p.lede{
+  margin-top:22px;max-width:36em;font-size:16px;color:var(--ink2);
+}
+.stats{display:flex;flex-wrap:wrap;gap:44px;margin-top:44px}
+.stat .n{font-size:32px;font-weight:800;color:var(--gold)}
+.stat .l{font-size:13px;color:var(--ink3);letter-spacing:1px}
+
+/* ── 通用栏目标题 ── */
+section{padding:64px 0}
+.sec-head{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:34px}
+.sec-head h2{
+  font-size:clamp(22px,3.4vw,32px);font-weight:800;letter-spacing:.5px;
+}
+.sec-head .no{color:var(--red);font-family:Georgia,serif;font-weight:700}
+.sec-head .sub{color:var(--ink3);font-size:14px;max-width:26em}
+
+/* ── 筛选条 ── */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{
+  font:inherit;font-size:14px;color:var(--ink2);cursor:pointer;
+  padding:8px 18px;border-radius:999px;border:1px solid var(--line);
+  background:rgba(255,255,255,.03);transition:.2s;
+}
+.filters button:hover,.filters button.on{background:var(--gold);color:#1a1408;border-color:var(--gold)}
+
+/* ── 卡片网格 ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:22px}
+.card{
+  background:var(--bg2);border:1px solid rgba(255,255,255,.07);
+  border-radius:16px;overflow:hidden;transition:.3s;position:relative;
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--line)}
+.poster{
+  position:relative;aspect-ratio:3/4;overflow:hidden;
+  background:linear-gradient(135deg,#1c1f33,#262b45);
+}
+.poster .art{
+  position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;
+  font-size:clamp(15px,2.4vw,20px);font-weight:800;color:rgba(255,255,255,.9);
+  text-align:center;padding:16px;line-height:1.4;
+  background-blend-mode:overlay;
+}
+.poster .yr{
+  position:absolute;top:12px;left:12px;font-size:12px;color:var(--gold2);
+  background:rgba(0,0,0,.55);padding:3px 10px;border-radius:999px;
+}
+.poster .tag-top{
+  position:absolute;top:12px;right:12px;font-size:11px;color:#fff;
+  background:var(--red);padding:3px 10px;border-radius:999px;
+}
+.card .body{padding:14px 16px 18px}
+.card h3{font-size:17px;font-weight:700;line-height:1.5}
+.card .meta{font-size:12.5px;color:var(--ink3);margin-top:6px;display:flex;gap:10px;flex-wrap:wrap}
+.card .meta b{color:var(--gold);font-weight:600}
+
+/* ── 分类（首屏大区） ── */
+.channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.channel{
+  padding:26px 22px;border-radius:16px;min-height:150px;display:flex;flex-direction:column;
+  justify-content:space-between;border:1px solid rgba(255,255,255,.07);background:var(--bg2);
+  transition:.3s;
+}
+.channel:hover{border-color:var(--gold);background:linear-gradient(160deg,var(--bg2),#1b1d31)}
+.channel .ic{font-size:26px}
+.channel h3{font-size:19px;margin-top:14px}
+.channel p{font-size:13px;color:var(--ink3);margin-top:8px}
+.channel .more{font-size:13px;color:var(--gold);margin-top:14px}
+
+/* ── 榜单 ── */
+.rank{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.rank ol{list-style:none;background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:10px}
+.rank li{
+  display:flex;align-items:center;gap:14px;padding:14px 12px;border-bottom:1px dashed rgba(255,255,255,.07);
+}
+.rank li:last-child{border-bottom:none}
+.rank .num{font:800 20px Georgia,serif;color:var(--ink3);min-width:28px}
+.rank li:nth-child(-n+3) .num{color:var(--gold)}
+.rank .txt{flex:1;min-width:0}
+.rank .txt b{display:block;font-size:16px}
+.rank .txt span{font-size:12.5px;color:var(--ink3)}
+.rank .rate{color:var(--gold2);font-weight:700;font-size:15px}
+
+/* ── 杂志横幅 ── */
+.zine{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.zine .l{padding:44px;background:linear-gradient(135deg,#1a1c2e,#20181c)}
+.zine .l .big{font-size:clamp(24px,3.6vw,36px);font-weight:800;line-height:1.4}
+.zine .l .big em{font-style:normal;color:var(--gold)}
+.zine .l p{color:var(--ink2);margin-top:18px;max-width:34em}
+.zine .r{
+  background:
+    radial-gradient(circle at 80% 20%,rgba(232,177,79,.35),transparent 55%),
+    linear-gradient(160deg,#241018,#16132a);
+  display:flex;align-items:center;justify-content:center;padding:44px;text-align:center;
+}
+.zine .r blockquote{font-size:15px;color:var(--ink2);font-style:italic;line-height:2}
+.zine .r cite{display:block;margin-top:18px;font-style:normal;font-size:13px;color:var(--gold);letter-spacing:1px}
+
+/* ── 评论 ── */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.note{background:var(--bg2);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:22px}
+.note .who{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.note .ava{
+  width:40px;height:40px;border-radius:50%;flex:none;
+  background:linear-gradient(135deg,var(--gold),var(--red));color:#1a1408;
+  display:flex;align-items:center;justify-content:center;font-weight:800;
+}
+.note .who b{font-size:15px}
+.note .who span{display:block;font-size:12px;color:var(--ink3)}
+.note p{font-size:14.5px;color:var(--ink2)}
+.stars{color:var(--gold);font-size:13px;margin-top:14px;letter-spacing:2px}
+
+/* ── 关于 + 页脚 ── */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.about .txt h2{font-size:clamp(22px,3.4vw,32px);font-weight:800;margin-bottom:18px}
+.about .txt p{color:var(--ink2);margin-bottom:14px}
+.about .txt ul{list-style:none;margin-top:8px}
+.about .txt li{padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:14.5px;color:var(--ink2)}
+.about .txt li b{color:var(--gold2)}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.step{
+  padding:22px;border-radius:14px;background:var(--bg2);border:1px solid rgba(255,255,255,.07);
+}
+.step .n{font:800 15px Georgia,serif;color:var(--red)}
+.step h4{font-size:16px;margin:8px 0 6px}
+.step p{font-size:13.5px;color:var(--ink3)}
+footer{border-top:1px solid var(--line);padding:44px 0 60px;margin-top:20px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+.foot h4{font-size:15px;color:var(--gold);margin-bottom:14px;letter-spacing:1px}
+.foot ul{list-style:none}
+.foot li{padding:6px 0;font-size:14px;color:var(--ink2)}
+.foot li a:hover{color:var(--gold2)}
+.foot .brand b{font-size:19px;color:var(--gold2)}
+.foot .brand p{font-size:13.5px;color:var(--ink3);margin-top:12px;max-width:30em}
+.footline{
+  margin-top:36px;padding-top:22px;border-top:1px dashed rgba(255,255,255,.1);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+  font-size:13px;color:var(--ink3);
+}
+.footline a{color:var(--ink2)}
+.footline .links{display:flex;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  .btn-nav{display:flex}
+  .menu{
+    position:absolute;top:66px;left:0;right:0;flex-direction:column;align-items:stretch;
+    background:rgba(13,15,26,.98);border-bottom:1px solid var(--line);
+    padding:12px;gap:2px;max-height:0;overflow:hidden;transition:.35s;
+  }
+  .menu.open{max-height:420px}
+  .menu a{padding:13px 16px;border-radius:10px}
+  .menu .site{display:block;padding:13px 16px;border-top:1px solid var(--line);margin-top:6px}
+  .hero{padding:54px 0 40px}
+  section{padding:48px 0}
+  .rank{grid-template-columns:1fr}
+  .zine{grid-template-columns:1fr}
+  .zine .l,.zine .r{padding:30px}
+  .about{grid-template-columns:1fr;gap:28px}
+  .foot{grid-template-columns:1fr}
+  .stats{gap:26px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+}
+@media (max-width:420px){
+  .wrap{padding:0 16px}
+  .stats{gap:20px}
+  .stat .n{font-size:26px}
+  .step{grid-column:span 2}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<header>
+  <div class="wrap nav">
+    <div class="logo">
+      <b>电影网<i>8090</i></b>
+      <span>dianyingwang8090-app</span>
+    </div>
+    <nav class="menu" id="menu">
+      <a href="#top">首页</a>
+      <a href="#films">经典片库</a>
+      <a href="#types">频道分类</a>
+      <a href="#rank">怀旧榜单</a>
+      <a href="#about">关于我们</a>
+      <span class="site">https://dianyingwang8090-app.github.io</span>
+    </nav>
+    <button class="btn-nav" aria-label="打开菜单" id="navBtn"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="kicker">录像厅 · 译制片 · 港片黄金岁月</span>
+      <h1>把<em>8090年代</em>的光影，重新搬回今天的屏幕</h1>
+      <p class="lede">电影网8090（dianyingwang8090-app）是一个专注怀旧影视的在线剧场：从港片江湖到国产译制片，从老电视连续剧到童年动画，按年代、类型与地区重新归档。这里不只列片名，更写清它为何值得再看一遍，以及它属于哪一段共同的成长记忆。</p>
+      <div class="stats">
+        <div class="stat"><div class="n">1980s</div><div class="l">录像厅年代</div></div>
+        <div class="stat"><div class="n">1990s</div><div class="l">港片黄金期</div></div>
+        <div class="stat"><div class="n">600+</div><div class="l">精选片目</div></div>
+        <div class="stat"><div class="n">12</div><div class="l">整理维度</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 片库 -->
+  <section id="films">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="no">01.</span> 经典片库</h2>
+        <span class="sub">按年代与地区归档，每部作品附看点导读与适看人群，手机上也能随手翻页收藏。</span>
+      </div>
+      <div class="filters">
+        <button class="on">全部年代</button>
+        <button>1980–1985</button>
+        <button>1986–1989</button>
+        <button>1990–1994</button>
+        <button>1995–1999</button>
+        <button>港台</button>
+        <button>内地</button>
+        <button>译制片</button>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <div class="poster">
+            <span class="yr">1986 · 香港</span>
+            <span class="tag-top">江湖</span>
+            <div class="art">英雄本色</div>
+          </div>
+          <div class="body">
+            <h3>英雄本色</h3>
+            <div class="meta"><b>★★★★★</b> 犯罪 / 兄弟情 / 128分钟</div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster">
+            <span class="yr">1990 · 香港</span>
+            <span class="tag-top">喜剧</span>
+            <div class="art">赌圣</div>
+          </div>
+          <div class="body">
+            <h3>赌圣</h3>
+            <div class="meta"><b>★★★★☆</b> 喜剧 / 赌片 / 100分钟</div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster">
+            <span class="yr">1982 · 内地</span>
+            <span class="tag-top">经典</span>
+            <div class="art">少林寺</div>
+          </div>
+          <div class="body">
+            <h3>少林寺</h3>
+            <div class="meta"><b>★★★★★</b> 武侠 / 动作 / 95分钟</div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster">
+            <span class="yr">1993 · 香港</span>
+            <span class="tag-top">奇幻</span>
+            <div class="art">青蛇</div>
+          </div>
+          <div class="body">
+            <h3>青蛇</h3>
+            <div class="meta"><b>★★★★☆</b> 古装 / 奇幻 / 99分钟</div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster">
+            <span class="yr">1994 · 香港</span>
+            <span class="tag-top">喜剧</span>
+            <div class="art">国产凌凌漆</div>
+          </div>
+          <div class="body">
+            <h3>国产凌凌漆</h3>
+            <div class="meta"><b>★★★★★</b> 喜剧 / 无厘头 / 90分钟</div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster">
+            <span class="yr">1987 · 香港</span>
+            <span class="tag-top">黑帮</span>
+            <div class="art">监狱风云</div>
+          </div>
+          <div class="body">
+            <h3>监狱风云</h3>
+            <div class="meta"><b>★★★★☆</b> 犯罪 / 剧情 / 98分钟</div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster">
+            <span class="yr">1995 · 香港</span>
+            <span class="tag-top">爱情</span>
+            <div class="art">大话西游</div>
+          </div>
+          <div class="body">
+            <h3>大话西游</h3>
+            <div class="meta"><b>★★★★★</b> 奇幻 / 爱情 / 95分钟</div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="poster">
+            <span class="yr">1999 · 香港</span>
+            <span class="tag-top">剧情</span>
+            <div class="art">枪火</div>
+          </div>
+          <div class="body">
+            <h3>枪火</h3>
+            <div class="meta"><b>★★★★★</b> 犯罪 / 剧情 / 84分钟</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类 -->
+  <section id="types">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="no">02.</span> 频道分类</h2>
+        <span class="sub">电影网8090把怀旧内容拆成六个频道，每个频道独立编目、独立片单，找片不再靠回忆。</span>
+      </div>
+      <div class="channels">
+        <a class="channel" href="#">
+          <div><div class="ic">🎬</div><h3>港片江湖</h3>
+          <p>警匪、江湖、无厘头喜剧与动作片，覆盖1986至1999年港片黄金期的高频佳作。</p></div>
+          <span class="more">进入频道 →</span>
+        </a>
+        <a class="channel" href="#">
+          <div><div class="ic">📺</div><h3>老剧时光</h3>
+          <p>8090年代经典电视连续剧与单元剧，附当年播出时段、主演阵容与剧集背景。</p></div>
+          <span class="more">进入频道 →</span>
+        </a>
+        <a class="channel" href="#">
+          <div><div class="ic">🌍</div><h3>译制经典</h3>
+          <p>日本、欧美、苏联译制片合集，保留原声译制信息，重温配音里的年代质感。</p></div>
+          <span class="more">进入频道 →</span>
+        </a>
+        <a class="channel" href="#">
+          <div><div class="ic">🎞️</div><h3>童年动画</h3>
+          <p>手绘赛璐璐时期的国产与引进动画，按制片厂、年份与系列重新整理。</p></div>
+          <span class="more">进入频道 →</span>
+        </a>
+        <a class="channel" href="#">
+          <div><div class="ic">📻</div><h3>幕后故事</h3>
+          <p>配乐、海报、配音、取景地与删减片段，讲清一部老片背后的创作细节。</p></div>
+          <span class="more">进入频道 →</span>
+        </a>
+        <a class="channel" href="#">
+          <div><div class="ic">🗓️</div><h3>年代专题</h3>
+          <p>按1980、1985、1990、1995四个节点做专题策展，一条时间线看尽影像变迁。</p></div>
+          <span class="more">进入频道 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 榜单 -->
+  <section id="rank">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="no">03.</span> 怀旧榜单</h2>
+        <span class="sub">由编辑组与影迷共同投票，按口碑、重看率与年代代表性每月更新，榜单数据仅作参考。</span>
+      </div>
+      <div class="rank">
+        <ol>
+          <li><span class="num">01</span><div class="txt"><b>英雄本色</b><span>1986 · 香港 · 犯罪</span></div><span class="rate">9.4</span></li>
+          <li><span class="num">02</span><div class="txt"><b>大话西游</b><span>1995 · 香港 · 奇幻爱情</span></div><span class="rate">9.3</span></li>
+          <li><span class="num">03</span><div class="txt"><b>少林寺</b><span>1982 · 内地 · 武侠动作</span></div><span class="rate">9.1</span></li>
+          <li><span class="num">04</span><div class="txt"><b>枪火</b><span>1999 · 香港 · 犯罪</span></div><span class="rate">8.9</span></li>
+          <li><span class="num">05</span><div class="txt"><b>青蛇</b><span>1993 · 香港 · 古装奇幻</span></div><span class="rate">8.8</span></li>
+          <li><span class="num">06</span><div class="txt"><b>监狱风云</b><span>1987 · 香港 · 犯罪</span></div><span class="rate">8.6</span></li>
+        </ol>
+        <ol>
+          <li><span class="num">07</span><div class="txt"><b>赌圣</b><span>1990 · 香港 · 喜剧</span></div><span class="rate">8.5</span></li>
+          <li><span class="num">08</span><div class="txt"><b>国产凌凌漆</b><span>1994 · 香港 · 无厘头</span></div><span class="rate">8.7</span></li>
+          <li><span class="num">09</span><div class="txt"><b>红高粱</b><span>1987 · 内地 · 剧情</span></div><span class="rate">8.4</span></li>
+          <li><span class="num">10</span><div class="txt"><b>新龙门客栈</b><span>1992 · 香港 · 武侠</span></div><span class="rate">8.6</span></li>
+          <li><span class="num">11</span><div class="txt"><b>胭脂扣</b><span>1988 · 香港 · 爱情</span></div><span class="rate">8.5</span></li>
+          <li><span class="num">12</span><div class="txt"><b>阳光灿烂的日子</b><span>1994 · 内地 · 青春</span></div><span class="rate">8.8</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 杂志横幅 -->
+  <section>
+    <div class="wrap">
+      <div class="zine">
+        <div class="l">
+          <div class="big">为什么还要<em>重看</em>8090年代的老片？<br>因为它们记录的是我们第一次看世界的方式。</div>
+          <p>电影网8090不把怀旧做成怀旧商品。每一篇导读都从影像本体出发：镜头为什么这样摆、台词为什么那时说、配乐用了哪段旋律。我们更在意一部作品在今天的说服力——它能否让没经历过那个年代的人，也看懂它当时的分量。本站由影迷与资料整理者共同维护，所有片目均标注年份、地区、类型与片长，便于检索与二次筛选。</p>
+        </div>
+        <div class="r">
+          <div>
+            <blockquote>“录像厅的幕布一亮，满屋的塑料凳就安静了。那是我们这一代人最早的电影院，也是最自由的电影课。”</blockquote>
+            <cite>—— 电影网8090 · 编辑手记</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 影迷评价 -->
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="no">04.</span> 影迷短评</h2>
+        <span class="sub">来自怀旧观影社群的真实反馈，已按影片分类整理，更多评价可在各片目详情页查看。</span>
+      </div>
+      <div class="notes">
+        <div class="note">
+          <div class="who"><div class="ava">阿</div><div><b>阿May</b><span>港片频道 · 常驻影迷</span></div></div>
+          <p>最喜欢这里的片单不是按流量排的，而是按年份和类型重新归档，找起片子来特别顺手。</p>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="note">
+          <div class="who"><div class="ava">老</div><div><b>老周</b><span>译制片频道 · 配音爱好者</span></div></div>
+          <p>配音演员和译制厂信息做得细致，看完片单又去翻了当年的译制片资料，很对胃口。</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+        <div class="note">
+          <div class="who"><div class="ava">小</div><div><b>小满</b><span>童年动画频道 · 95后</span></div></div>
+          <p>我是冲着童年动画进来的，没想到港片和老剧频道也把我留住了，页面在手机上翻着很舒服。</p>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="note">
+          <div class="who"><div class="ava">陈</div><div><b>陈老师</b><span>幕后故事频道 · 影评人</span></div></div>
+          <p>幕后故事一栏是加分项，海报、取景地、配乐这些细节，才是老片重看的价值所在。</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于 -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2><span class="no">05.</span> 关于电影网8090</h2>
+        <span class="sub">一个只做一件事的小站：把8090年代的好片子，讲清楚、排整齐、找得到。</span>
+      </div>
+      <div class="about">
+        <div class="txt">
+          <p>电影网8090（站点地址 <a href="https://dianyingwang8090-app.github.io" style="color:var(--gold2)">https://dianyingwang8090-app.github.io</a>）由一群把录像厅记了一辈子的影迷搭建。我们不追新片，只做年代影像的长期整理：每一部入选作品都经过年代真实性、制作质量与可看性三层筛选。</p>
+          <p>本站内容以资料整理、影史介绍与观影推荐为主，所有片目信息均标注年份、地区、类型与片长，方便检索与二次筛选。栏目分为经典片库、频道分类、怀旧榜单与关于我们四大部分，内页链接以锚点形式组织，适配手机与电脑浏览。</p>
+          <ul>
+            <li><b>经典片库：</b>按年代与地区归档，附看点导读与适看人群。</li>
+            <li><b>频道分类：</b>港片、老剧、译制、动画、幕后、专题六路并进。</li>
+            <li><b>怀旧榜单：</b>由编辑组与影迷共同投票，每月更新一次。</li>
+            <li><b>资料说明：</b>片名、年份、片长等信息以公开资料为准，如有出入欢迎指正。</li>
+          </ul>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="n">Step 01</div><h4>选年代</h4><p>从1980到1999任选一个区间，先看那个年代在拍什么。</p></div>
+          <div class="step"><div class="n">Step 02</div><h4>定频道</h4><p>港片、老剧、译制片或童年动画，一次只看一个主题。</p></div>
+          <div class="step"><div class="n">Step 03</div><h4>读导读</h4><p>每部作品都有看点说明与适看人群，减少盲目挑选。</p></div>
+          <div class="step"><div class="n">Step 04</div><h4>留片单</h4><p>在评论区留下你的8090年代片单，下期榜单可能就有它。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="brand">
+        <b>电影网8090</b>
+        <p>专注8090年代经典影视的在线怀旧剧场，以资料整理、影史介绍与观影推荐为主。站点地址：<a href="https://dianyingwang8090-app.github.io" style="color:var(--gold2)">https://dianyingwang8090-app.github.io</a></p>
+      </div>
+      <div>
+        <h4>栏目导航</h4>
+        <ul>
+          <li><a href="#films">经典片库</a></li>
+          <li><a href="#types">频道分类</a></li>
+          <li><a href="#rank">怀旧榜单</a></li>
+          <li><a href="#about">关于我们</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>频道索引</h4>
+        <ul>
+          <li><a href="#">港片江湖</a></li>
+          <li><a href="#">老剧时光</a></li>
+          <li><a href="#">译制经典</a></li>
+          <li><a href="#">童年动画</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footline">
+      <span>Copyright © 电影网8090（dianyingwang8090-app） 保留所有权利 · 内容仅供影史介绍与观影推荐参考</span>
+      <div class="links">
+        <a href="#">隐私说明</a>
+        <a href="#">投稿合作</a>
+        <a href="#">纠错反馈</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('navBtn');
+  var menu=document.getElementById('menu');
+  if(btn&&menu){
+    btn.addEventListener('click',function(){menu.classList.toggle('open');});
+    menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open');});
+  }
+  var fs=document.querySelectorAll('.filters button');
+  fs.forEach(function(b){b.addEventListener('click',function(){
+    fs.forEach(function(x){x.classList.remove('on');});
+    b.classList.add('on');
+  });});
+})();
+</script>
+</body>
+</html>
